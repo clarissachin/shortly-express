@@ -16,8 +16,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../public')));
 
-//app.use(cookieParser);
-
+app.use(cookieParser);
 
 app.get('/', 
 (req, res) => {
@@ -150,7 +149,7 @@ app.post('/login', (req, res, next) => {
 
   return models.Users.get({'username': username})
     .then(user => { 
-      console.log('user:', user);
+      // console.log('user:', user);
       // username:
       // pwd
       // salt
